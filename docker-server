@@ -1,9 +1,12 @@
 #!/bin/bash
+# modified to generate a new password key
+# every time a new docker build is ran
+
 
 keystorePath="/config/configDropins/defaults/keystore.xml"
 
-if [ ! -e $keystorePath ]
-then
+#if [ ! -e $keystorePath ]
+#then
   # Generate the keystore.xml
   PASSWORD=$(openssl rand -base64 32)
   XML="<server description=\"Default Server\"><keyStore id=\"defaultKeyStore\" password=\"$PASSWORD\" /></server>"
@@ -11,7 +14,7 @@ then
   # Create the keystore.xml file and place in configDropins
   mkdir -p $(dirname $keystorePath)
   echo $XML > $keystorePath
-fi
+#fi
 
 # Pass on to the real server run
 exec /opt/ibm/wlp/bin/server $@

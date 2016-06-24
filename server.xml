@@ -10,7 +10,7 @@
       httpsPort="9443" />
 
 
-	<application id="REST" location="REST-WEB.war" name="REST" type="war" context-root="r" />
+	<application id="REST" location="REST-WEB-1.0-SNAPSHOT.war" name="REST" type="war" context-root="r" />
 
 
     <basicRegistry id="basic" realm="BasicRealm"> 

@@ -6,4 +6,4 @@ services:
     ports:
      - "5000:9080"
     volumes:
-     - /vagrant/dropins:/config/apps
+     - /vagrant:/config
