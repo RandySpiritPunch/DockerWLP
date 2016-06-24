@@ -1,0 +1,9 @@
+version: '2'
+services:
+  random-rs:
+    build: .
+    container_name: random-rs    
+    ports:
+     - "5000:9080"
+    volumes:
+     - /vagrant/dropins:/config/apps
